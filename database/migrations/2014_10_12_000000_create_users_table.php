@@ -24,6 +24,13 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+
+            $table->unsignedBigInteger("media_id")->nullable();
+            $table->foreign("media_id")
+                ->references("id")
+                ->on("media")
+                ->onDelete("cascade");
         });
     }
 
