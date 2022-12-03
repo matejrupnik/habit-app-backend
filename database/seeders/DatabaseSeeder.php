@@ -19,34 +19,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
-        Media::query()->create([
-            'file_name' => 'slika',
-            'alt' => 'alt slike',
-        ]);
-
-        User::query()->create([
-            'username' => 'test',
-            'email' => 'test@example.com',
-            'password' => Hash::make("test1234"),
-            'first_name' => 'matej',
-            'middle_name' => 'car',
-            'last_name' => 'rupnik',
-            'media_id' => 1
-        ]);
-
-
-
-        Habit::query()->create([
-            'name' => 'slika',
-        ])->users()->attach(1);
-
-        Post::query()->create([
-            'caption' => "test",
-            'media_id' => 1,
-            'user_id' => 1,
-            'habit_id' => 1,
-        ]);
+        Media::factory(10)->create();
+        Habit::factory(10)
+            ->has(User::factory(10))
+            ->create();
+        Post::factory(1000)->create();
     }
 }

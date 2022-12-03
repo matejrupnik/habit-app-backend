@@ -13,12 +13,12 @@ class PostController extends Controller
 {
     public function index_users(User $user)
     {
-        return PostResource::collection($user->posts);
+        return PostResource::collection($user->posts()->paginate(15));
     }
 
     public function index_habits(Habit $habit)
     {
-        return PostResource::collection($habit->posts);
+        return PostResource::collection($habit->posts()->paginate(15));
     }
 
     public function show(Post $post)

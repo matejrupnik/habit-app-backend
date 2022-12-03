@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use function Sodium\increment;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ */
+class PostFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+            'caption' => fake()->text(),
+            'user_id' => rand(1, 10),
+            'media_id' => rand(1, 10),
+            'habit_id' => rand(1, 10)
+        ];
+    }
+}
