@@ -17,7 +17,7 @@ class MediaFactory extends Factory
     public function definition()
     {
         return [
-            'file_name' => rand(1,10).".jpeg",
+            'file_name' => rand(1,10).".jpg",
             'alt' => fake()->text(),
         ];
     }

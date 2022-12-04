@@ -12,7 +12,7 @@ class HabitController extends Controller
 {
     public function index()
     {
-        return HabitResource::collection(Habit::paginate(15)); // paginate mors se narest al pa nekak filtr
+        return HabitResource::collection(Habit::paginate(15));
     }
 
     public function show(Habit $habit)

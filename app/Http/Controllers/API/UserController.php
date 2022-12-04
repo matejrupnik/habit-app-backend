@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return UserResource::collection(User::paginate(15)); // paginate mors se narest al pa nekak filtr
+        return UserResource::collection(User::paginate(15));
     }
 
     public function show()
