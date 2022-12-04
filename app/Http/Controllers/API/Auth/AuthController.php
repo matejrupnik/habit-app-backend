@@ -19,11 +19,11 @@ class AuthController extends Controller
 
         if(!$user) {
             return response([
-                "message" => "E-poštni naslov ne obstaja."
+                "message" => "E-mail address does not exist."
             ], 401);
         } elseif (!Hash::check($fields["password"], $user->password)) {
             return response([
-                "message" => "Nepravilno geslo."
+                "message" => "Incorrect password."
             ], 401);
         }
 
@@ -43,7 +43,7 @@ class AuthController extends Controller
             "first_name" => "required|string",
             "middle_name" => "string",
             "last_name" => "string",
-            "email" => "required|string|unique:users,email",
+            "email" => "required|email:rfc,dns|string|unique:users,email",
             "password" => "required|string|confirmed"
         ]);
 
@@ -70,7 +70,7 @@ class AuthController extends Controller
         auth()->user()->tokens()->delete();
 
         return [
-          'message' => 'Odjava uspešna.'
+          'message' => 'Sign out successfull.'
         ];
     }
 }
