@@ -27,8 +27,8 @@ Route::group(['namespace' => 'API', 'middleware' => 'auth:sanctum'], function ()
     Route::get('feed', [PostController::class, 'feed'])->name('feed');
 
     Route::get('users', [UserController::class, 'index'])->name('users');
-    Route::get('users/{user}', [UserController::class, 'show'])->name('user');
-    Route::get('users/{user}/habits', [HabitController::class, 'user_habits'])->name('user_habits');
+    Route::get('user', [UserController::class, 'show'])->name('user');
+    Route::get('user/habits', [HabitController::class, 'user_habits'])->name('user_habits');
 
     Route::get('habits', [HabitController::class, 'index'])->name('habits');
     Route::get('habits/{habit}', [HabitController::class, 'show'])->name('habit');

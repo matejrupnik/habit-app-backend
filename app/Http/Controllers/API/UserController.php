@@ -15,9 +15,9 @@ class UserController extends Controller
         return UserResource::collection(User::paginate(15)); // paginate mors se narest al pa nekak filtr
     }
 
-    public function show(User $user)
+    public function show()
     {
-        return UserResource::make($user);
+        return UserResource::make(auth()->user());
     }
 
     public function habit_users(Habit $habit) {
