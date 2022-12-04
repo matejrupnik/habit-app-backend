@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/habitgnu/
+    - /bin/cp -r . $DEPLOYPATH/habit_app/
+    - /bin/cp -r ./public/. $DEPLOYPATH/public_html/
