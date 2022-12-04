@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         Media::factory(10)->create();
         Habit::factory(10)
             ->has(User::factory(10))
