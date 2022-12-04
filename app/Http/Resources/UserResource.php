@@ -23,11 +23,9 @@ class UserResource extends JsonResource
             'middle_name' => $this->middle_name,
             'last_name' => $this->last_name,
             'media' => MediaResource::make($this->media),
-            'posts' => Route::is('user') ? PostResource::collection($this->posts) : null,
-            'habits' => Route::is('user') ? HabitResource::collection($this->habits) : null,
-            'email' => $this->email,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+//            'posts' => Route::is('user') ? PostResource::collection($this->posts) : null,
+//            'habits' => Route::is('user') ? HabitResource::collection($this->habits) : null,
+            'email' => $this->email
         ];
     }
 }
