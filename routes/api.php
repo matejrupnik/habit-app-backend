@@ -18,22 +18,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post("/login", [AuthController::class, "login"]);
-Route::post("/register", [AuthController::class, "register"]);
+Route::post("login", [AuthController::class, "login"]);
+Route::post("register", [AuthController::class, "register"]);
 
 Route::group(['namespace' => 'API', 'middleware' => 'auth:sanctum'], function () {
-    Route::post("/logout", [AuthController::class, "logout"]);
+    Route::post("logout", [AuthController::class, "logout"]);
+
+    Route::get('feed', [PostController::class, 'feed'])->name('feed');
 
     Route::get('users', [UserController::class, 'index'])->name('users');
     Route::get('users/{user}', [UserController::class, 'show'])->name('user');
+    Route::get('users/{user}/habits', [HabitController::class, 'user_habits'])->name('user_habits');
 
     Route::get('habits', [HabitController::class, 'index'])->name('habits');
     Route::get('habits/{habit}', [HabitController::class, 'show'])->name('habit');
 
     Route::get('users/{user}/posts', [PostController::class, 'index_users'])->name('user_posts');
     Route::get('habits/{habit}/posts', [PostController::class, 'index_habits'])->name('habit_posts');
+    Route::get('habits/{habit}/users', [UserController::class, 'habit_users'])->name('habit_users');
 
     Route::get('posts/{post}', [PostController::class, 'show'])->name('post');
+    Route::post('posts/create', [PostController::class, 'create']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

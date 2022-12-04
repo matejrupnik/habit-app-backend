@@ -56,7 +56,7 @@ class User extends Authenticatable
         return $this->belongsTo(Media::class);
     }
 
-    public function habit() {
+    public function habits() {
         return $this->belongsToMany(Habit::class);
     }
 }

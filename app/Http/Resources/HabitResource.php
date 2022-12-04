@@ -18,8 +18,6 @@ class HabitResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-//            'posts' => Route::is('habit') ? PostResource::collection($this->posts) : null,
-//            'users' => Route::is('habit') ? UserResource::collection($this->users) : null,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

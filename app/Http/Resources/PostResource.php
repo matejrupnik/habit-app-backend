@@ -19,8 +19,8 @@ class PostResource extends JsonResource
             'id' => $this->id,
             'caption' => $this->caption,
             'media' => MediaResource::make($this->media),
-            'user' => Route::is('post', 'habit_posts') ? UserResource::make($this->user) : null,
-            'habit' => Route::is('post', 'user_posts') ? HabitResource::make($this->habit) : null,
+            'user' => Route::is('post', 'habit_posts', 'feed') ? UserResource::make($this->user) : null,
+            'habit' => Route::is('post', 'user_posts', 'feed') ? HabitResource::make($this->habit) : null,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];
