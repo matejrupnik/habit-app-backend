@@ -1,0 +1,10 @@
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (1, 'Naomie', '2022-12-04 15:16:42', '2022-12-04 15:16:42');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (2, 'Tania', '2022-12-04 15:16:43', '2022-12-04 15:16:43');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (3, 'Keara', '2022-12-04 15:16:44', '2022-12-04 15:16:44');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (4, 'Shirley', '2022-12-04 15:16:44', '2022-12-04 15:16:44');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (5, 'Lilly', '2022-12-04 15:16:45', '2022-12-04 15:16:45');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (6, 'Deangelo', '2022-12-04 15:16:46', '2022-12-04 15:16:46');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (7, 'Layne', '2022-12-04 15:16:46', '2022-12-04 15:16:46');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (8, 'Eve', '2022-12-04 15:16:47', '2022-12-04 15:16:47');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (9, 'Raul', '2022-12-04 15:16:48', '2022-12-04 15:16:48');
+INSERT INTO `habit-app`.habits (id, name, created_at, updated_at) VALUES (10, 'Alyce', '2022-12-04 15:16:49', '2022-12-04 15:16:49');
