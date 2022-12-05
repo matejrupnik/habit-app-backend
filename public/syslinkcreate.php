@@ -1,2 +1,2 @@
 <?php
-symlink('/home/habitgnu/habit_app/storage/app/public', '/home/habitgnu/public_html/storage');
+symlink('/home/habitgnu/habit_app/storage/app/public/media', '/home/habitgnu/public_html/media');
