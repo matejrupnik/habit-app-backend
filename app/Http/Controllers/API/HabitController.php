@@ -23,4 +23,8 @@ class HabitController extends Controller
     public function user_habits(User $user) {
         return HabitResource::collection($user->habits()->paginate(15));
     }
+    
+    public function current_user_habits() {
+        return HabitResource::collection(auth()->user()->habits()->paginate(15));
+    }
 }
