@@ -43,7 +43,7 @@ class PostController extends Controller
         $request->validate([
             "caption" => "string",
             "habit_id" => "required|int",
-            "media" => "required"
+            "media" => "required|mimes:jpg,jpeg,png"
             ]);
 
         $media_name = time()."-".auth()->id().".".$request->media->extension();
