@@ -15,7 +15,12 @@ class UserController extends Controller
         return UserResource::collection(User::paginate(15));
     }
 
-    public function show()
+    public function show(User $user)
+    {
+        return UserResource::make($user);
+    }
+    
+    public function show_current_user()
     {
         return UserResource::make(auth()->user());
     }
