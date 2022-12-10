@@ -5,7 +5,6 @@ use App\Http\Controllers\API\HabitController;
 use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\SearchController;
 use App\Http\Controllers\API\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group(['namespace' => 'API', 'middleware' => ['guest']], function () {
+Route::group(['namespace' => 'API', 'middleware' => ['guest', 'cors']], function () {
     Route::post("login", [AuthController::class, "login"]);
     Route::post("register", [AuthController::class, "register"]);
 });
 
-Route::group(['namespace' => 'API', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['namespace' => 'API', 'middleware' => ['auth:sanctum', 'cors']], function () {
     Route::post("logout", [AuthController::class, "logout"]);
 
     Route::get('feed', [PostController::class, 'feed'])->name('feed');
