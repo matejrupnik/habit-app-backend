@@ -42,6 +42,7 @@ Route::group(['namespace' => 'API', 'middleware' => ['auth:sanctum', 'cors']], f
     Route::get('habits/{habit}/users', [UserController::class, 'habit_users'])->name('habit_users');
 
     Route::get('posts/{post}', [PostController::class, 'show'])->name('post');
+    Route::delete('posts/{post}', [PostController::class, 'destroy']);
     Route::post('posts/create', [PostController::class, 'create']);
 
     Route::get('habits/search/{query}', [SearchController::class, 'search_habits'])->name('search_habits');
