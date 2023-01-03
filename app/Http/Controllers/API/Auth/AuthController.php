@@ -38,6 +38,7 @@ class AuthController extends Controller
     }
 
     public function register(Request $request) {
+        dd($request);
         $fields = $request->validate([
             "username" => "required|string|unique:users,username",
             "first_name" => "required|string",
