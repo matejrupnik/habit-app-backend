@@ -23,7 +23,8 @@ class UserResource extends JsonResource
             'middle_name' => $this->middle_name,
             'last_name' => $this->last_name,
             'media' => MediaResource::make($this->media),
-            'email' => $this->email
+            'email' => $this->email,
+            'is_admin' => $this->is_admin
         ];
     }
 }

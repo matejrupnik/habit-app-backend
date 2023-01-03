@@ -26,7 +26,8 @@ class User extends Authenticatable
         "password",
         "created_at",
         "updated_at",
-        "media_id"
+        "media_id",
+        "is_admin"
     ];
 
     /**

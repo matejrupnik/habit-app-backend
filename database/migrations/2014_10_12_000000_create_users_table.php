@@ -31,6 +31,7 @@ return new class extends Migration
                 ->references("id")
                 ->on("media")
                 ->onDelete("cascade");
+            $table->integer("is_admin");
         });
     }
 
