@@ -41,10 +41,10 @@ class AuthController extends Controller
 
         $fields = $request->validate([
 //            "username" => "required|string|unique:users,username",
-//            "first_name" => "required|string",
-//            "middle_name" => "string",
+            "first_name" => "required|string",
+            "middle_name" => "string",
             "last_name" => "string",
-            "email" => "required|email:rfc,dns|string|unique:users,email",
+//            "email" => "required|email:rfc,dns|string|unique:users,email",
 //            "password" => "required|string|confirmed"
         ]);
 
