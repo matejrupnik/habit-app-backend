@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -44,8 +45,8 @@ class AuthController extends Controller
             "first_name" => "required|string",
             "middle_name" => "string",
             "last_name" => "string",
-//            "email" => "required|email:rfc,dns|string|unique:users,email",
-//            "password" => "required|string|confirmed"
+            "email" => "required|email:rfc,dns|string|unique:users,email",
+            "password" => "required|string|confirmed"
         ]);
 
         dd($request);
@@ -77,5 +78,9 @@ class AuthController extends Controller
         return [
           'message' => 'Sign out successfull.'
         ];
+    }
+
+    public function clear_route() {
+        Artisan::call('route:clear');
     }
 }

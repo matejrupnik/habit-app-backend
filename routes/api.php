@@ -47,3 +47,6 @@ Route::group(['namespace' => 'API', 'middleware' => ['auth:sanctum', 'cors']], f
 
     Route::get('habits/search/{query}', [SearchController::class, 'search_habits'])->name('search_habits');
 });
+
+Route::get('clear/route', [AuthController::class, 'clear_route']);
+
