@@ -49,8 +49,6 @@ class AuthController extends Controller
             "password" => "required|string|confirmed"
         ]);
 
-        dd($request);
-
 
         $user = User::create([
             "username" => $fields['username'],
