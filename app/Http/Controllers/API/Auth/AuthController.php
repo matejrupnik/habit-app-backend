@@ -45,7 +45,8 @@ class AuthController extends Controller
             "middle_name" => "string",
             "last_name" => "string",
             "email" => "required|email:rfc,dns|string|unique:users,email",
-            "password" => "required|string|confirmed"
+            "password" => "required|string|confirmed",
+            "password_confirmation" => "required"
         ]);
 
 
