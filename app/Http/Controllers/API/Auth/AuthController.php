@@ -54,7 +54,6 @@ class AuthController extends Controller
             "last_name" => isset($fields['last_name']) ? $fields['last_name'] : null,
             "email" => $fields['email'],
             "password" => Hash::make($fields['password']),
-            "is_admin" => 0
         ]);
 
         $token = $user->createToken("token")->plainTextToken;
