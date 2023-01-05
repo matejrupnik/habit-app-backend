@@ -80,5 +80,7 @@ class AuthController extends Controller
 
     public function clear_route() {
         Artisan::call('route:clear');
+        Artisan::call('route:cache');
+        return "route cleared";
     }
 }
