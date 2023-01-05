@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group(['namespace' => 'API', 'middleware' => ['guest', 'cors']], function () {
+    Route::get('clear/route', [AuthController::class, 'clear_route']);
     Route::post("login", [AuthController::class, "login"]);
     Route::post("/register", [AuthController::class, "register"]);
 });
@@ -49,5 +50,4 @@ Route::group(['namespace' => 'API', 'middleware' => ['auth:sanctum', 'cors']], f
     Route::get('habits/search/{query}', [SearchController::class, 'search_habits'])->name('search_habits');
 });
 
-Route::get('clear/route', [AuthController::class, 'clear_route']);
 
