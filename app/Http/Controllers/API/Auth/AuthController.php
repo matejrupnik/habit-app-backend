@@ -59,6 +59,9 @@ class AuthController extends Controller
             "password" => Hash::make($fields['password']),
             "is_admin" => 0
         ]);
+        
+        $habit = Habit::find(1);
+        $user->habits()->attach($habit);
 
         $token = $user->createToken("token")->plainTextToken;
 
