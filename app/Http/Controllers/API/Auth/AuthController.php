@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Habit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
@@ -59,6 +60,9 @@ class AuthController extends Controller
             "password" => Hash::make($fields['password']),
             "is_admin" => 0
         ]);
+        
+        $habit = Habit::find(1);
+        $user->habits()->attach($habit);
 
         $token = $user->createToken("token")->plainTextToken;
 
