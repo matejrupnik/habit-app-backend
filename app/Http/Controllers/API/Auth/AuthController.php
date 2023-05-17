@@ -58,7 +58,8 @@ class AuthController extends Controller
             "last_name" => isset($fields['last_name']) ? $fields['last_name'] : null,
             "email" => $fields['email'],
             "password" => Hash::make($fields['password']),
-            "is_admin" => 0
+            "is_admin" => 0,
+            'media_id' => 1
         ]);
 
         $habit = Habit::find(1);
