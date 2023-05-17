@@ -9,6 +9,7 @@ use App\Models\Media;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -67,6 +68,7 @@ class PostController extends Controller
     }
 
     public function update(Request $request, Post $post) {
+        Log::info($request->all());
         $post = Post::find($post->id);
         $post->update(["caption" => $request->caption]);
         return response("success", 200);
