@@ -46,7 +46,7 @@ class PostController extends Controller
             "habit_id" => "required|int",
             "media" => "required|mimes:jpg,jpeg,png"
             ]);
-        dd($request);
+//        dd($request);$request
 
         $media_name = time()."-".auth()->id().".".$request->media->extension();
         $request->media->move(storage_path('app/public/media/'), $media_name);
