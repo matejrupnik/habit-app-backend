@@ -53,6 +53,7 @@ Route::group(['namespace' => 'API', 'middleware' => ['auth:sanctum', 'cors']], f
     Route::post('posts/create', [PostController::class, 'create']);
 
     Route::get('habits/search/{query}', [SearchController::class, 'search_habits'])->name('search_habits');
+    Route::get('users/{user}/habits/search/{query}', [SearchController::class, 'search_users_habits'])->name('search_users_habits');
 });
 
 
