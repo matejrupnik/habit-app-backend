@@ -36,4 +36,30 @@ class UserController extends Controller
         $user->delete();
         return response("success", 200);
     }
+
+    public function follow(User $user, Habit $habit) {
+        $user = User::find($user->id);
+        $habit = Habit::find($habit->id);
+
+        if (!$user || !$habit) {
+            return response('error', 400);
+        }
+
+        $user->habits()->attach($habit);
+
+        return response('success', 200);
+    }
+
+    public function unfollow(User $user, Habit $habit) {
+        $user = User::find($user->id);
+        $habit = Habit::find($habit->id);
+
+        if (!$user || !$habit) {
+            return response('error', 400);
+        }
+
+        $user->habits()->detach($habit);
+
+        return response('success', 200);
+    }
 }

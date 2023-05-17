@@ -69,6 +69,6 @@ class PostController extends Controller
     public function update(Request $request, Post $post) {
         $post = Post::find($post->id);
         $post->update(["caption" => $request->caption]);
-        return response('success', 200);
+        return response("success", 200);
     }
 }

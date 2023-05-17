@@ -36,6 +36,9 @@ Route::group(['namespace' => 'API', 'middleware' => ['auth:sanctum', 'cors']], f
     Route::get('user/habits', [HabitController::class, 'current_user_habits'])->name('current_user_habits');
     Route::delete('users/{user}', [UserController::class, 'destroy']);
 
+    Route::post('users/{user}/follow/{habit}', [UserController::class, 'follow']);
+    Route::post('users/{user}/unfollow/{habit}', [UserController::class, 'unfollow']);
+
     Route::get('habits', [HabitController::class, 'index'])->name('habits');
     Route::get('habits/{habit}', [HabitController::class, 'show'])->name('habit');
     Route::delete('habits/{habit}', [HabitController::class, 'destroy']);
