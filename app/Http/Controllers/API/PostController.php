@@ -67,12 +67,8 @@ class PostController extends Controller
     }
 
     public function update(Request $request, Post $post) {
-        $request->validate([
-            "caption" => "string"
-        ]);
-
         $post = Post::find($post->id);
-        $post->update(["caption" => $request["caption"]]);
+        $post->update(["caption" => $request->caption]);
         return $post;
     }
 }

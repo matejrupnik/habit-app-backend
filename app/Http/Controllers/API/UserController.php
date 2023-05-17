@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         return UserResource::make($user);
     }
-    
+
     public function show_current_user()
     {
         return UserResource::make(auth()->user());
@@ -27,5 +27,13 @@ class UserController extends Controller
 
     public function habit_users(Habit $habit) {
         return UserResource::collection($habit->users()->paginate(15));
+    }
+
+    public function destroy($id) {
+        $user = User::find($id);
+        $user->posts()->delete();
+
+        $user->delete();
+        return response("success", 200);
     }
 }

@@ -25,4 +25,12 @@ class HabitController extends Controller
     public function current_user_habits() {
         return HabitResource::collection(auth()->user()->habits()->paginate(15));
     }
+
+    public function destroy($id) {
+        $habit = Habit::find($id);
+        $habit->posts()->delete();
+
+        $habit->delete();
+        return response("success", 200);
+    }
 }
