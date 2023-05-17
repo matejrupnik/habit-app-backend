@@ -68,7 +68,7 @@ class PostController extends Controller
         return Post::destroy($id);
     }
 
-    public function update(Request $request, Post $post) {
+    public function update(Request $request) {
         $request->validate([
             "caption" => "string"
         ]);
