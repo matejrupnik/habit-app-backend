@@ -46,6 +46,7 @@ class PostController extends Controller
             "habit_id" => "required|int",
             "media" => "required|mimes:jpg,jpeg,png"
             ]);
+        dd($request);
 
         $media_name = time()."-".auth()->id().".".$request->media->extension();
         $request->media->move(storage_path('app/public/media/'), $media_name);
@@ -68,7 +69,11 @@ class PostController extends Controller
     }
 
     public function update(Request $request, Post $post) {
-        Log::info($request);
+        $request->validate([
+            "caption" => "string"
+        ]);
+        dd($request);
+
         $post = Post::find($post->id);
         $post->update(["caption" => $request->caption]);
         return response("success", 200);
